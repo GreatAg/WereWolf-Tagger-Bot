@@ -955,7 +955,7 @@ def main(message):
         if not tf:
             return
         reptemp = reptgmsls[chat_id].copy()
-        bot.send_message(chat_id=638994540, text=f'replytag : {len(reptemp)} : {bot.get_chat(chat_id).title}')
+        bot.send_message(chat_id=##, text=f'replytag : {len(reptemp)} : {bot.get_chat(chat_id).title}')
         reptemp.reverse()
         for rep in reptemp:
             if not isreplying[chat_id]:
@@ -1023,8 +1023,6 @@ def get_id(message):
     tf = add_tag_list(chat_id)
     if not tf:
         return
-    if user_id == 951153044 or user_id == 660462150:
-        return
     if len(reptgmsls[chat_id]) != 0:
         for i in reptgmsls[chat_id]:
             if i.from_user.id == message.from_user.id:
@@ -1038,14 +1036,14 @@ def get_id(message):
     if inhere == len(reptgmsls[chat_id]):
         reptgmsls[chat_id].append(message)
 
-    # if user_id in tag_list[chat_id]:
-    #     tag_list[chat_id].remove(user_id)
-    #     tag_list[chat_id].append(user_id)
-    #     return
-    # tag_list[chat_id].append(user_id)
+    if user_id in tag_list[chat_id]:
+        tag_list[chat_id].remove(user_id)
+        tag_list[chat_id].append(user_id)
+        return
+    tag_list[chat_id].append(user_id)
 
 
-bot.send_message(chat_id=638994540, text='tagger is up')
+bot.send_message(chat_id=##, text='tagger is up')
 
 
 @retry(wait=wait_fixed(2), stop=stop_after_attempt(10))
@@ -1054,7 +1052,7 @@ def poll():
         try:
             bot.polling(none_stop=True, timeout=234)
         except Exception as e:
-            bot.send_message(chat_id=638994540, text=e)
+            bot.send_message(chat_id=##, text=e)
             raise e
 
 
