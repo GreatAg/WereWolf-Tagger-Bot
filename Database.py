@@ -1,6 +1,6 @@
 import psycopg2
 
-conn = psycopg2.connect(host="95.217.251.236", database="solish", user="ali_ag", password="A0914090a")
+conn = psycopg2.connect(host=##, database=##, user=##, password=##)
 
 c = conn.cursor()
 
