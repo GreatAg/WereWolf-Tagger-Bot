@@ -9,9 +9,7 @@ from tenacity import retry, wait_fixed, stop_after_attempt
 
 lock = threading.Lock()
 
-TOKEN = '1002564110:AAFAxqzYElOAMFc0kHy4mAUUmiBQqbfLZUw'
-## test : 1858625868:AAHxsfbOYTux-gSCWTDg2sDRWiTq8gmmykE
-## main : 1002564110:AAFAxqzYElOAMFc0kHy4mAUUmiBQqbfLZUw
+TOKEN = #TOKEN#
 
 bot = telebot.TeleBot(token=TOKEN, num_threads=25)
 
@@ -361,105 +359,105 @@ def tagger(message):
         return
 
 
-#     global tag_message
-#     global chats
-#     msg = ''
-#     user = message.from_user
-#     user_id = user.id
-#     chat_id = message.chat.id
-#     list_s = message.text.split(" ")
-#     add_accesstag(chat_id)
-#     add_activedel(chat_id)
-#     add_isreplying(chat_id)
-#     if not accesstag[chat_id]:
-#         ch = check_admin(user_id, chat_id, message)
-#         if ch:
-#             pass
-#         elif not ch:
-#             return
-#         elif ch == 1:
-#             pass
-#     add_chats(chat_id)
-#     if chat_id in blocked:
-#         if user_id in blocked[chat_id]:
-#             return
-#     isjoin = forcejoin_channel(message)
-#     if not isjoin:
-#         return
-#     try:
-#         num = int(list_s[1])
-#         num2 = int(list_s[2])
-#     except:
-#         try:
-#             bot.reply_to(message, '''❗لطفا دستور را در فرمت درست وارد کنید❗
-# 🔸/tag number number
-# 🔸Example : /tag 0 100 ''')
-#             return
-#         except:
-#             return
-#     bet = num2 - num
-#     if bet != 100:
-#         bot.reply_to(message, '''❗اعداد را در بازه های صد تایی وارد کنید❗
-# 🔸/tag number number
-# 🔸Example : /tag 0 100''')
-#         return
-#     add_tag_message(chat_id)
-#     if not chats[chat_id]:
-#         chats[chat_id] = True
-#         tf = add_tag_list(chat_id)
-#         if not tf:
-#             return
-#         tgtemp = tag_list[chat_id].copy()
-#         bot.send_message(chat_id=638994540, text=f'tag : {len(tgtemp)} : {bot.get_chat(chat_id).title}')
-#         if num > len(tgtemp):
-#             try:
-#                 bot.reply_to(message, '❗یوزری در این بازه ثبت نشده است❗')
-#             except:
-#                 pass
-#             chats[chat_id] = False
-#             return
-#         tgtemp.reverse()
-#         i = num
-#         a = 0
-#         while num <= i < num2:
-#             try:
-#                 if not chats[chat_id]:
-#                     return
-#                 x = bot.get_chat_member(chat_id=message.chat.id, user_id=tgtemp[i])
-#                 if not x.user.first_name:
-#                     i = i + 1
-#                     continue
-#                 msg = msg + f'\n[{x.user.first_name}](tg://user?id={x.user.id})'
-#                 a += 1
-#                 if a == 5:
-#                     tag = bot.send_message(chat_id=message.chat.id, text=msg,
-#                                            parse_mode='Markdown')
-#                     msg = ''
-#                     a = 0
-#                     try:
-#                         tag_message[chat_id].append(tag.message_id)
-#                     except:
-#                         pass
-#                     time.sleep(1)
-#                 i = i + 1
-#             except:
-#                 i = i + 1
-#                 pass
-#         if msg:
-#             tag = bot.send_message(chat_id=message.chat.id, text=msg,
-#                                    parse_mode='Markdown')
-#             msg = ''
-#             try:
-#                 tag_message[chat_id].append(tag.message_id)
-#             except:
-#                 pass
-#         chats[chat_id] = False
-#         tgtemp.clear()
-#     elif chats[chat_id]:
-#         try:
-#             bot.reply_to(message, "دادا دارم تگ میکنم دیگه❕")
-#         except:
-#             pass
+    global tag_message
+    global chats
+    msg = ''
+    user = message.from_user
+    user_id = user.id
+    chat_id = message.chat.id
+    list_s = message.text.split(" ")
+    add_accesstag(chat_id)
+    add_activedel(chat_id)
+    add_isreplying(chat_id)
+    if not accesstag[chat_id]:
+        ch = check_admin(user_id, chat_id, message)
+        if ch:
+            pass
+        elif not ch:
+            return
+        elif ch == 1:
+            pass
+    add_chats(chat_id)
+    if chat_id in blocked:
+        if user_id in blocked[chat_id]:
+            return
+    isjoin = forcejoin_channel(message)
+    if not isjoin:
+        return
+    try:
+        num = int(list_s[1])
+        num2 = int(list_s[2])
+    except:
+        try:
+            bot.reply_to(message, '''❗لطفا دستور را در فرمت درست وارد کنید❗
+🔸/tag number number
+🔸Example : /tag 0 100 ''')
+            return
+        except:
+            return
+    bet = num2 - num
+    if bet != 100:
+        bot.reply_to(message, '''❗اعداد را در بازه های صد تایی وارد کنید❗
+🔸/tag number number
+🔸Example : /tag 0 100''')
+        return
+    add_tag_message(chat_id)
+    if not chats[chat_id]:
+        chats[chat_id] = True
+        tf = add_tag_list(chat_id)
+        if not tf:
+            return
+        tgtemp = tag_list[chat_id].copy()
+        bot.send_message(chat_id=638994540, text=f'tag : {len(tgtemp)} : {bot.get_chat(chat_id).title}')
+        if num > len(tgtemp):
+            try:
+                bot.reply_to(message, '❗یوزری در این بازه ثبت نشده است❗')
+            except:
+                pass
+            chats[chat_id] = False
+            return
+        tgtemp.reverse()
+        i = num
+        a = 0
+        while num <= i < num2:
+            try:
+                if not chats[chat_id]:
+                    return
+                x = bot.get_chat_member(chat_id=message.chat.id, user_id=tgtemp[i])
+                if not x.user.first_name:
+                    i = i + 1
+                    continue
+                msg = msg + f'\n[{x.user.first_name}](tg://user?id={x.user.id})'
+                a += 1
+                if a == 5:
+                    tag = bot.send_message(chat_id=message.chat.id, text=msg,
+                                           parse_mode='Markdown')
+                    msg = ''
+                    a = 0
+                    try:
+                        tag_message[chat_id].append(tag.message_id)
+                    except:
+                        pass
+                    time.sleep(1)
+                i = i + 1
+            except:
+                i = i + 1
+                pass
+        if msg:
+            tag = bot.send_message(chat_id=message.chat.id, text=msg,
+                                   parse_mode='Markdown')
+            msg = ''
+            try:
+                tag_message[chat_id].append(tag.message_id)
+            except:
+                pass
+        chats[chat_id] = False
+        tgtemp.clear()
+    elif chats[chat_id]:
+        try:
+            bot.reply_to(message, "دادا دارم تگ میکنم دیگه❕")
+        except:
+            pass
 
 
 @bot.message_handler(commands=['stop'])
